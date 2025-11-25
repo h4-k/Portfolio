@@ -115,8 +115,8 @@ export const AboutSection: React.FC = () => {
                                 <code className="block">
 {`{
   "identity": "Ayman",
-  "status": "Moroccan web pentester / designer",
-  "location": "Casablanca, Morocco",
+  "status": "Moroccan web pentester ",
+  "location": "Somewhere, Morocco",
   "interests": [
     "Offensive security",
     "Creative coding",
