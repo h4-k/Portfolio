@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getProjectById } from '../utils/content';
+import { getProjectById } from '../src/utils/content';
 import { ArrowLeft, Github, ExternalLink, Shield, Lock, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -49,8 +49,8 @@ const ProjectDetail: React.FC = () => {
                 >
                     <div className="flex items-center gap-3 mb-4">
                         <div className={`p-3 rounded-xl border border-white/10 ${project.securityLevel === 'TOP SECRET'
-                                ? 'bg-rose-500/10 text-rose-500'
-                                : 'bg-primary/10 text-primary'
+                            ? 'bg-rose-500/10 text-rose-500'
+                            : 'bg-primary/10 text-primary'
                             }`}>
                             {project.securityLevel === 'TOP SECRET' ? (
                                 <Lock size={24} />
@@ -96,7 +96,7 @@ const ProjectDetail: React.FC = () => {
                         <span className="text-primary">//</span> Tech Stack
                     </h2>
                     <div className="flex flex-wrap gap-3">
-                        {project.techStack.map((tech, index) => (
+                        {project.techStack.map((tech: string, index: number) => (
                             <motion.span
                                 key={tech}
                                 initial={{ opacity: 0, scale: 0.9 }}
