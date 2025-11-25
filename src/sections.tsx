@@ -1,5 +1,6 @@
 import React from 'react';
-import { Hero, AboutSection } from '../components/EmailDetail';
+import Home from '../components/Home';
+import { AboutSection } from '../components/EmailDetail';
 import SkillsTerminal from '../components/StatsModal';
 import ProjectsTerminal from '../components/EmailList';
 import { ExperienceSection, EducationSection, CertificationSection } from '../components/Timeline';
@@ -25,7 +26,7 @@ export const SECTION_ROUTES: SectionRoute[] = [
     path: '/',
     element: (
       <SectionShell>
-        <Hero />
+        <Home />
       </SectionShell>
     ),
   },
@@ -112,4 +113,3 @@ export const SECTION_ROUTES: SectionRoute[] = [
 ];
 
 export const DEFAULT_ROUTE = SECTION_ROUTES[0];
-
