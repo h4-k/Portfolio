@@ -11,7 +11,18 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ routes }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const activeSection = routes.find(route => route.path === location.pathname)?.id || routes[0]?.id;
+
+  // Determine active section - handle project detail pages
+  const getActiveSection = () => {
+    // Check if we're on a project detail page
+    if (location.pathname.startsWith('/projects/')) {
+      return 'projects';
+    }
+    // Otherwise find exact match
+    return routes.find(route => route.path === location.pathname)?.id || routes[0]?.id;
+  };
+
+  const activeSection = getActiveSection();
 
   // Auto-scroll the navbar content to keep the active tab centered/visible
   useEffect(() => {
@@ -20,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ routes }) => {
       if (activeBtn) {
         const container = scrollRef.current;
         const scrollLeft = activeBtn.offsetLeft - (container.clientWidth / 2) + (activeBtn.clientWidth / 2);
-        
+
         container.scrollTo({
           left: scrollLeft,
           behavior: 'smooth'
@@ -32,10 +43,10 @@ const Navbar: React.FC<NavbarProps> = ({ routes }) => {
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 perspective-1000 w-[95%] max-w-5xl">
       <div className="absolute inset-0 bg-zinc-950/80 backdrop-blur-xl rounded-full border border-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]" />
-      
+
       <div className="relative px-4 py-2 sm:px-6 sm:py-3 flex items-center justify-between overflow-hidden rounded-full">
         {/* Logo - Stays visible */}
-        <Link 
+        <Link
           to="/"
           className="flex items-center gap-3 cursor-pointer group flex-shrink-0 mr-6"
         >
@@ -48,37 +59,36 @@ const Navbar: React.FC<NavbarProps> = ({ routes }) => {
         </Link>
 
         {/* Scrollable Links Container - Content moves left/right here */}
-        <div 
-            ref={scrollRef}
-            className="flex-1 overflow-x-auto scrollbar-hide -mr-2 pr-2 mask-linear-fade"
+        <div
+          ref={scrollRef}
+          className="flex-1 overflow-x-auto scrollbar-hide -mr-2 pr-2 mask-linear-fade"
         >
-            <div className="flex items-center gap-1 min-w-max px-2">
+          <div className="flex items-center gap-1 min-w-max px-2">
             {routes.map((item) => {
-                const isActive = activeSection === item.id;
-                return (
+              const isActive = activeSection === item.id;
+              return (
                 <Link
-                    key={item.id}
-                    id={`nav-btn-${item.id}`}
-                    to={item.path}
-                    className={`relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-                    isActive ? 'text-black' : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                  key={item.id}
+                  id={`nav-btn-${item.id}`}
+                  to={item.path}
+                  className={`relative px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap ${isActive ? 'text-black' : 'text-zinc-400 hover:text-white hover:bg-white/5'
                     }`}
                 >
-                    {isActive && (
+                  {isActive && (
                     <motion.div
-                        layoutId="pill"
-                        className="absolute inset-0 bg-primary rounded-full"
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      layoutId="pill"
+                      className="absolute inset-0 bg-primary rounded-full"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
-                    )}
-                    <span className="relative z-10 mix-blend-multiply font-bold font-mono">{item.label}</span>
+                  )}
+                  <span className="relative z-10 mix-blend-multiply font-bold font-mono">{item.label}</span>
                 </Link>
-                );
+              );
             })}
-            </div>
+          </div>
         </div>
       </div>
-      
+
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
             display: none;

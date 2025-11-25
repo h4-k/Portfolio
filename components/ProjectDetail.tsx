@@ -49,8 +49,8 @@ const ProjectDetail: React.FC = () => {
                 >
                     <div className="flex items-center gap-3 mb-4">
                         <div className={`p-3 rounded-xl border border-white/10 ${project.securityLevel === 'TOP SECRET'
-                                ? 'bg-rose-500/10 text-rose-500'
-                                : 'bg-primary/10 text-primary'
+                            ? 'bg-rose-500/10 text-rose-500'
+                            : 'bg-primary/10 text-primary'
                             }`}>
                             {project.securityLevel === 'TOP SECRET' ? (
                                 <Lock size={24} />
@@ -118,15 +118,38 @@ const ProjectDetail: React.FC = () => {
                         transition={{ delay: 0.35 }}
                         className="bg-zinc-900/40 border border-white/5 rounded-2xl p-8 mb-8 backdrop-blur-sm"
                     >
-                        <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                             <span className="text-primary">//</span> Writeup & Walkthrough
                         </h2>
-                        <div className="text-zinc-300 leading-relaxed space-y-4 writeup-content">
-                            {project.writeup.split('\n\n').map((paragraph, index) => (
-                                <p key={index} className="text-base">
-                                    {paragraph}
-                                </p>
-                            ))}
+                        <div className="text-zinc-300 leading-relaxed space-y-6 writeup-content">
+                            {project.writeup.split('\n\n').map((block, index) => {
+                                // Check if it's a code block (starts with ```)
+                                if (block.trim().startsWith('```')) {
+                                    const codeContent = block.replace(/```[\w]*\n?/g, '').trim();
+                                    return (
+                                        <pre key={index} className="bg-black/50 border border-white/10 rounded-lg p-4 overflow-x-auto">
+                                            <code className="text-primary font-mono text-sm">
+                                                {codeContent}
+                                            </code>
+                                        </pre>
+                                    );
+                                }
+                                // Check if it's a heading (starts with **)
+                                if (block.trim().startsWith('**') && block.trim().endsWith('**')) {
+                                    const heading = block.replace(/\*\*/g, '').trim();
+                                    return (
+                                        <h3 key={index} className="text-xl font-bold text-white mt-6 mb-3 flex items-center gap-2">
+                                            <span className="text-primary">›</span> {heading}
+                                        </h3>
+                                    );
+                                }
+                                // Regular paragraph
+                                return (
+                                    <p key={index} className="text-base text-zinc-300">
+                                        {block}
+                                    </p>
+                                );
+                            })}
                         </div>
                     </motion.div>
                 )}
