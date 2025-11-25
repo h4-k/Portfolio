@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mail, MapPin, Shield, Github, MessageSquare, AlertTriangle, CheckCircle, Loader } from 'lucide-react';
+import { Send, Mail, Shield, Github, MessageSquare, CheckCircle, Loader } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '', honeypot: '' });

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Sidebar';
 import { Hero, AboutSection } from './components/EmailDetail';
 import ProjectsTerminal from './components/EmailList';

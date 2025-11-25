@@ -107,7 +107,7 @@ export const CertificationSection: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {CERTIFICATIONS.map((cert, index) => (
+                {CERTIFICATIONS.map((cert) => (
                     <motion.div
                         key={cert.id}
                         whileHover={{ scale: 1.02 }}
