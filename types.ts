@@ -5,6 +5,7 @@ export interface Project {
   techStack: string[];
   securityLevel: 'DECLASSIFIED' | 'RESTRICTED' | 'TOP SECRET';
   link?: string;
+  writeup?: string; // Detailed writeup/walkthrough of the project
 }
 
 export interface Skill {

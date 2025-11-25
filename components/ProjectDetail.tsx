@@ -49,8 +49,8 @@ const ProjectDetail: React.FC = () => {
                 >
                     <div className="flex items-center gap-3 mb-4">
                         <div className={`p-3 rounded-xl border border-white/10 ${project.securityLevel === 'TOP SECRET'
-                            ? 'bg-rose-500/10 text-rose-500'
-                            : 'bg-primary/10 text-primary'
+                                ? 'bg-rose-500/10 text-rose-500'
+                                : 'bg-primary/10 text-primary'
                             }`}>
                             {project.securityLevel === 'TOP SECRET' ? (
                                 <Lock size={24} />
@@ -110,6 +110,27 @@ const ProjectDetail: React.FC = () => {
                     </div>
                 </motion.div>
 
+                {/* Writeup Section */}
+                {project.writeup && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35 }}
+                        className="bg-zinc-900/40 border border-white/5 rounded-2xl p-8 mb-8 backdrop-blur-sm"
+                    >
+                        <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                            <span className="text-primary">//</span> Writeup & Walkthrough
+                        </h2>
+                        <div className="text-zinc-300 leading-relaxed space-y-4 writeup-content">
+                            {project.writeup.split('\n\n').map((paragraph, index) => (
+                                <p key={index} className="text-base">
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+
                 {/* Links */}
                 {project.link && (
                     <motion.div
@@ -125,7 +146,7 @@ const ProjectDetail: React.FC = () => {
                             className="flex items-center gap-2 px-6 py-3 bg-primary text-black rounded-lg font-bold hover:bg-emerald-400 transition-colors group"
                         >
                             <Github size={20} className="group-hover:rotate-12 transition-transform" />
-                            View Source Code
+                            View on TryHackMe
                         </a>
                         <a
                             href={project.link}
@@ -134,7 +155,7 @@ const ProjectDetail: React.FC = () => {
                             className="flex items-center gap-2 px-6 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded-lg font-medium hover:border-primary hover:text-primary transition-all group"
                         >
                             <ExternalLink size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            Live Demo
+                            Try Challenge
                         </a>
                     </motion.div>
                 )}

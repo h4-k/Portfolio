@@ -3,7 +3,6 @@ import Home from '../components/Home';
 import { AboutSection } from '../components/EmailDetail';
 import SkillsTerminal from '../components/StatsModal';
 import ProjectsTerminal from '../components/EmailList';
-import ProjectDetail from '../components/ProjectDetail';
 import { ExperienceSection, EducationSection, CertificationSection } from '../components/Timeline';
 import Blog from '../components/Blog';
 import Contact from '../components/Contact';
@@ -58,16 +57,6 @@ export const SECTION_ROUTES: SectionRoute[] = [
     element: (
       <SectionShell>
         <ProjectsTerminal />
-      </SectionShell>
-    ),
-  },
-  {
-    id: 'project-detail',
-    label: 'Project Detail',
-    path: '/projects/:id',
-    element: (
-      <SectionShell>
-        <ProjectDetail />
       </SectionShell>
     ),
   },
