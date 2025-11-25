@@ -34,6 +34,21 @@ Interactive hacker-style portfolio featuring matrix rain, glitch effects, and te
 
 2. Push the `dist` folder to the `gh-pages` branch, or use GitHub Actions (see `.github/workflows/deploy.yml`)
 
-3. In your GitHub repository settings, go to Pages and set the source to `gh-pages` branch or GitHub Actions.
+3. In your GitHub repository settings, go to Pages and set the source to **GitHub Actions** so the workflow can publish the compiled `dist/` bundle.
 
-**Note:** If deploying to a project page (not user page), update `base` in `vite.config.ts` to `'/repository-name/'`.
+**Note:** `vite.config.ts` already sets `base: '/Portfolio/'`. Update it if you rename the repository.
+
+## Add or remove sections
+
+Routes/nav are defined in `src/sections.tsx`. Each entry controls:
+
+- `id`: unique identifier
+- `label`: text used in the navbar
+- `path`: URL segment (e.g. `/skills`)
+- `element`: React node rendered for that page
+
+To add a new section:
+
+1. Build a component (or reuse an existing one).
+2. Append a new object to `SECTION_ROUTES` with the component wrapped in `<SectionShell>`.
+3. The navbar and router update automatically—no extra wiring needed.

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, User, Globe, Code } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
   const [text, setText] = useState('');
   const fullText = "Moroccan Web Pentester & Creative Technologist";
+  const navigate = useNavigate();
 
   useEffect(() => {
     let index = 0;
@@ -77,7 +79,7 @@ export const Hero: React.FC = () => {
             className="flex flex-wrap gap-4"
           >
             <button 
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => navigate('/projects')}
                 className="group relative px-8 py-4 bg-primary text-black rounded-sm font-bold flex items-center gap-2 overflow-hidden hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(0,220,130,0.4)]"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 skew-y-12" />

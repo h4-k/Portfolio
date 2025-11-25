@@ -1,17 +1,5 @@
 import { Project, Skill, Experience, Education, Certification, Article } from './types';
 
-export const NAV_ITEMS = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'education', label: 'Education' },
-  { id: 'certifications', label: 'Certifications' },
-  { id: 'articles', label: 'Articles' },
-  { id: 'contact', label: 'Contact' },
-];
-
 export const PROJECTS: Project[] = [];
 
 export const SKILLS: Skill[] = [
