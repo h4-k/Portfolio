@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { PROJECTS } from '../constants';
+import { getProjects } from '../src/utils/content';
 import { motion } from 'framer-motion';
 import { Github, Info, ShieldCheck, Lock, Activity } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -60,6 +60,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, index }) => {
 };
 
 const ProjectsTerminal: React.FC = () => {
+  const PROJECTS = getProjects();
   const hasProjects = PROJECTS.length > 0;
   const navigate = useNavigate();
   return (
@@ -95,8 +96,8 @@ const ProjectsTerminal: React.FC = () => {
                     <div className="flex justify-between items-start mb-6">
                       <div className="flex items-center gap-3">
                         <div className={`p-3 rounded-xl border border-white/10 transition-all duration-300 group-hover:scale-110 shadow-lg ${project.securityLevel === 'TOP SECRET'
-                            ? 'bg-rose-500/10 text-rose-500 group-hover:shadow-rose-500/20'
-                            : 'bg-primary/10 text-primary group-hover:shadow-[0_0_15px_rgba(0,220,130,0.2)]'
+                          ? 'bg-rose-500/10 text-rose-500 group-hover:shadow-rose-500/20'
+                          : 'bg-primary/10 text-primary group-hover:shadow-[0_0_15px_rgba(0,220,130,0.2)]'
                           }`}>
                           {project.securityLevel === 'TOP SECRET' ? (
                             <Lock size={20} />
@@ -129,16 +130,19 @@ const ProjectsTerminal: React.FC = () => {
 
                     <div className="flex items-center gap-4 pt-6 border-t border-white/5">
                       <button
-                        onClick={() => navigate('/projects')}
+                        onClick={() => {
+                          navigate(`/projects/${project.id}`);
+                          window.scrollTo(0, 0);
+                        }}
                         className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors group/btn"
                       >
                         <Info size={16} className="group-hover/btn:scale-110 transition-transform" />
                         Learn More
                       </button>
-                      <button className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors group/btn">
+                      <a href={project.link || '#'} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors group/btn">
                         <Github size={16} className="group-hover/btn:rotate-12 transition-transform" />
                         Source Code
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
