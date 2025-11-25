@@ -4,8 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // CRITICAL: Vercel serves from the root, not a subdirectory
+  base: '/Portfolio/', // GitHub Pages project page base path
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks: {
