@@ -4,7 +4,7 @@ import { ArrowRight, Download, User, Globe, Code } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const [text, setText] = useState('');
-  const fullText = "Full Stack Engineer & Security Researcher";
+  const fullText = "Moroccan Web Pentester & Creative Technologist";
 
   useEffect(() => {
     let index = 0;
@@ -112,16 +112,16 @@ export const AboutSection: React.FC = () => {
                             <pre className="font-mono text-sm text-zinc-300 overflow-x-auto">
                                 <code className="block">
 {`{
-  "identity": "H4K",
-  "status": "Available for Hire",
-  "location": "Cyberspace",
+  "identity": "Ayman",
+  "status": "Moroccan web pentester / designer",
+  "location": "Casablanca, Morocco",
   "interests": [
-    "Ethical Hacking",
-    "Cryptography",
-    "UI/UX Design",
-    "Blockchain"
+    "Offensive security",
+    "Creative coding",
+    "Graphic design",
+    "Open source"
   ],
-  "mission": "To secure the decentralized web"
+  "mission": "Break, learn, design, and secure"
 }`}
                                 </code>
                             </pre>
@@ -139,10 +139,10 @@ export const AboutSection: React.FC = () => {
                         
                         <div className="space-y-6 text-zinc-400 leading-relaxed font-light text-lg">
                             <p>
-                                I am a security-focused <span className="text-white font-medium">Full Stack Engineer</span> with a passion for breaking and building things. My journey began in the depths of forums, learning the art of exploitation, which evolved into a career in <span className="text-primary/80">defensive architecture</span>.
+                                Hey, I'm <span className="text-white font-medium">Ayman</span> — a Moroccan web pentester, programmer, and graphic designer who grew up obsessing over how systems break and how brands feel. I split my time between probing attack surfaces, tightening defenses, and crafting interfaces that still feel alive.
                             </p>
                             <p>
-                                Unlike traditional developers, I view code through the lens of an attacker. This perspective allows me to build applications that are not only performant and aesthetic but fundamentally <span className="text-white font-medium">secure by design</span>.
+                                That hybrid mindset lets me ship work that is bold visually but also inspected down to the packet level. Every build gets the hacker treatment first, then the designer polish.
                             </p>
                             <div className="flex flex-wrap gap-4 pt-4">
                                 <div className="flex items-center gap-2 text-sm font-mono text-zinc-300">
@@ -151,7 +151,7 @@ export const AboutSection: React.FC = () => {
                                 </div>
                                 <div className="flex items-center gap-2 text-sm font-mono text-zinc-300">
                                     <Code size={16} className="text-primary" />
-                                    <span>Clean Code</span>
+                                    <span>Code & Canvas</span>
                                 </div>
                             </div>
                         </div>

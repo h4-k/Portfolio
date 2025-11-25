@@ -3,7 +3,16 @@ import { EXPERIENCE, EDUCATION, CERTIFICATIONS } from '../constants';
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Calendar } from 'lucide-react';
 
+const ComingSoonCard: React.FC<{ label: string; detail: string }> = ({ label, detail }) => (
+  <div className="bg-zinc-900/30 border border-dashed border-primary/30 rounded-xl p-8 text-center">
+    <p className="text-primary font-mono text-xs mb-2">// {label}</p>
+    <h3 className="text-2xl font-bold text-white mb-3">Coming Soon</h3>
+    <p className="text-zinc-400 text-sm">{detail}</p>
+  </div>
+);
+
 export const ExperienceSection: React.FC = () => {
+  const hasExperience = EXPERIENCE.length > 0;
   return (
     <section id="experience" className="py-24 relative">
       <div className="container mx-auto px-6 max-w-5xl">
@@ -13,7 +22,7 @@ export const ExperienceSection: React.FC = () => {
         </div>
 
         <div className="relative border-l border-zinc-800 ml-4 md:ml-12 space-y-12">
-            {EXPERIENCE.map((job, index) => (
+            {hasExperience ? EXPERIENCE.map((job, index) => (
                 <motion.div 
                     key={job.id}
                     initial={{ opacity: 0, x: -50 }}
@@ -49,7 +58,12 @@ export const ExperienceSection: React.FC = () => {
                         </div>
                     </div>
                 </motion.div>
-            ))}
+            )) : (
+                <ComingSoonCard 
+                    label="EXPERIENCE_LOG"
+                    detail="Real client stories and exploit write-ups are being anonymized. Check back shortly."
+                />
+            )}
         </div>
       </div>
     </section>
@@ -57,6 +71,7 @@ export const ExperienceSection: React.FC = () => {
 };
 
 export const EducationSection: React.FC = () => {
+    const hasEducation = EDUCATION.length > 0;
     return (
       <section id="education" className="py-24 bg-black/20">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -66,7 +81,7 @@ export const EducationSection: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {EDUCATION.map((edu, index) => (
+                {hasEducation ? EDUCATION.map((edu, index) => (
                     <motion.div
                         key={edu.id}
                         initial={{ opacity: 0, y: 20 }}
@@ -90,7 +105,12 @@ export const EducationSection: React.FC = () => {
                             </div>
                         )}
                     </motion.div>
-                ))}
+                )) : (
+                    <ComingSoonCard 
+                        label="EDUCATION_LOG"
+                        detail="Formal credentials are being documented. Portfolio updates will surface them soon."
+                    />
+                )}
             </div>
         </div>
       </section>
@@ -98,6 +118,7 @@ export const EducationSection: React.FC = () => {
 };
 
 export const CertificationSection: React.FC = () => {
+    const hasCerts = CERTIFICATIONS.length > 0;
     return (
       <section id="certifications" className="py-24">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -107,7 +128,7 @@ export const CertificationSection: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {CERTIFICATIONS.map((cert) => (
+                {hasCerts ? CERTIFICATIONS.map((cert) => (
                     <motion.div
                         key={cert.id}
                         whileHover={{ scale: 1.02 }}
@@ -125,7 +146,12 @@ export const CertificationSection: React.FC = () => {
                             </div>
                         </div>
                     </motion.div>
-                ))}
+                )) : (
+                    <ComingSoonCard 
+                        label="CERT_STATUS"
+                        detail="High-value certifications are queued for publication with the official proofs."
+                    />
+                )}
             </div>
         </div>
       </section>

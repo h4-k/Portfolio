@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Send, Mail, Shield, Github, MessageSquare, CheckCircle, Loader } from 'lucide-react';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqajowol';
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '', honeypot: '' });
   const [status, setStatus] = useState<'IDLE' | 'SCANNING' | 'SENDING' | 'SENT' | 'ERROR'>('IDLE');
@@ -22,6 +24,11 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const containsThreatSignature = (input: string) => {
+    const signatures = /(select\s|insert\s|delete\s|drop\s|truncate\s|union\s|sleep\(|script|onerror|alert\(|--|#|\/\*|\*\/)/i;
+    return signatures.test(input);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -34,7 +41,6 @@ const Contact: React.FC = () => {
     setStatus('SCANNING');
     setSecurityLog([]);
 
-    // Simulate Security Checks
     const steps = [
         "Initializing Handshake...",
         "Scanning Payload for XSS Vectors...",
@@ -51,23 +57,55 @@ const Contact: React.FC = () => {
     // 2. SANITIZATION
     const cleanName = sanitizeInput(formData.name);
     const cleanMessage = sanitizeInput(formData.message);
+    const cleanEmail = formData.email.trim();
+
+    if (
+        containsThreatSignature(formData.name) ||
+        containsThreatSignature(formData.message) ||
+        containsThreatSignature(formData.email)
+    ) {
+        setSecurityLog(prev => [...prev, "🚫 Intrusion attempt blocked: payload rejected."]);
+        setStatus('ERROR');
+        return;
+    }
 
     if (cleanName !== formData.name || cleanMessage !== formData.message) {
         setSecurityLog(prev => [...prev, "⚠️ THREAT DETECTED: Sanitizing malicious characters..."]);
     }
 
     setStatus('SENDING');
-    await new Promise(resolve => setTimeout(resolve, 800));
-    
-    setStatus('SENT');
-    setSecurityLog(prev => [...prev, "✅ TRANSMISSION COMPLETE."]);
-    
-    // Reset after delay
-    setTimeout(() => {
-        setStatus('IDLE');
+
+    try {
+        const payload = new FormData();
+        payload.append('name', cleanName);
+        payload.append('email', cleanEmail);
+        payload.append('message', cleanMessage);
+
+        setSecurityLog(prev => [...prev, "📡 Routing through Formspree relay..."]);
+
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: payload
+        });
+
+        if (!response.ok) {
+            throw new Error('Transmission failed');
+        }
+
+        setStatus('SENT');
+        setSecurityLog(prev => [...prev, "✅ TRANSMISSION COMPLETE."]);
         setFormData({ name: '', email: '', message: '', honeypot: '' });
-        setSecurityLog([]);
-    }, 5000);
+    } catch (error) {
+        console.error(error);
+        setStatus('ERROR');
+        setSecurityLog(prev => [...prev, "❌ TRANSMISSION FAILED. Please retry later."]);
+    } finally {
+        setTimeout(() => {
+            setStatus('IDLE');
+            setSecurityLog([]);
+        }, 5000);
+    }
   };
 
   return (
@@ -88,21 +126,21 @@ const Contact: React.FC = () => {
                         </div>
                         <h2 className="text-4xl font-bold text-white mb-6">Establish Uplink</h2>
                         <p className="text-zinc-400 mb-8 leading-relaxed">
-                            Ready to collaborate on secure architectures? Initiating a transmission here employs end-to-end simulation of secure protocols.
+                            Ready to collaborate on secure Moroccan-built stacks? Each packet runs through manual validation before it hits my inbox.
                         </p>
 
                         <div className="space-y-6">
-                            <a href="mailto:agent401.0x0@gmail.com" className="flex items-center gap-4 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all hover:bg-white/10">
+                            <a href="mailto:contact@aymanpentest.io" className="flex items-center gap-4 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all hover:bg-white/10">
                                 <div className="p-3 rounded-full bg-zinc-900 text-primary group-hover:scale-110 transition-transform">
                                     <Mail size={20} />
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold text-sm">Email Priority One</h4>
-                                    <p className="text-zinc-500 text-xs font-mono group-hover:text-primary/80 transition-colors">agent401.0x0@gmail.com</p>
+                                    <p className="text-zinc-500 text-xs font-mono group-hover:text-primary/80 transition-colors">contact@aymanpentest.io</p>
                                 </div>
                             </a>
 
-                            <a href="https://github.com/h4k" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all hover:bg-white/10">
+                            <a href="https://github.com/h4-k" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all hover:bg-white/10">
                                 <div className="p-3 rounded-full bg-zinc-900 text-white group-hover:scale-110 transition-transform">
                                     <Github size={20} />
                                 </div>
