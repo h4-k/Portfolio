@@ -1,81 +1,99 @@
 <!-- ────────────────────────────────────────────────────────────────────── -->
-<!--                           HEADER / BANNER                             -->
+<!--                            █▀▀ █ █▀▀ █▀█ █▀█ █ █▀█                             -->
+<!--                            █▄▄ █ █▀▀ █▀▄ █▄█ █ █▀▄                             -->
+<!--                             PORTFOLIO • H4K • CYBERSECURITY 💀              -->
+<!-- ────────────────────────────────────────────────────────────────────── -->
+
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?text=H4K%20//%20Cyber-Security%20Agent👨‍💻&animation=fadeIn&type=waving&color=gradient&height=120"/>
+  <img src="https://capsule-render.vercel.app/api?text=H4K%20//%20Cyber-Security%20Agent👨‍💻&animation=fadeIn&type=waving&color=gradient&height=140"/>
 </p>
-
-<p align="center">
-  <a href="https://h4-k.github.io/Portfolio/">
-    <img src="https://user-images.githubusercontent.com/your-user-id/your-banner-image.png" alt="Portfolio Banner" width="800"/>
-  </a>
-</p>
-
-<!-- ────────────────────────────────────────────────────────────────────── -->
-### 👋 Hi there — I’m AGENT401 (aka H4K)
-
-```yaml
-name: AGENT401 “H4K”
-role: Cyber Security Agent / Ethical Hacker
-based_in: Marrakesh, Morocco
-using: Kali Linux · Pen-testing · Bug-bounties · CTFs · Security-research
-currently_learning: Advanced pentesting frameworks, exploit dev, threat modelling
-looking_to_collab_on: Bug-bounty audits, security hardening, open-source security tools
-fun_fact: I’m passionate about combining offensive security & education 📚
-```
-
-<!-- ────────────────────────────────────────────────────────────────────── -->
-## 🚀 What I Do / What I’m Good At
-
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kali/kali-original.svg" alt="kali-linux" width="40" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python" width="40" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="bash" width="40" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="git" width="40" height="40"/>
-  <!-- Add more tools/technologies as you like -->
-</p>
-
-**Specialties & Interests:**
-
-- ✅ Ethical hacking / penetration testing  
-- ✅ CTF challenges & exploit development  
-- ✅ Security audits / bug bounty research  
-- ✅ Linux / shell scripting / automation  
-- ✅ Secure code reviews / threat modeling  
-
-<!-- ────────────────────────────────────────────────────────────────────── -->
-## 🔗 Where to Find & Follow Me
 
 <p align="center">
   <a href="https://h4-k.github.io/Portfolio/" target="_blank">
-    <img height="40" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="Portfolio"/>
+    <!-- Replace with your custom banner if you have one -->
+    <img src="https://user-images.githubusercontent.com/your-user-id/your-banner-image.png" alt="Portfolio Banner" width="900"/>
   </a>
+</p>
+
+<!-- ────────────────────────────────────────────────────────────────────── -->
+### 👋 Welcome, I’m **AGENT401 (H4K)** — your friendly neighborhood hacker  
+
+```yaml
+alias: AGENT401 “H4K”
+role: Cyber-Security Agent / Ethical Hacker / Bug-Bounty Hunter
+location: Marrakesh, Morocco 🌍
+tools: Kali Linux · Bash · Python · Networking · Exploit Dev · Pentesting
+passion: Breaking things so they can be fixed. Security by design 💥
+status: Always learning, always probing — never idle.
+```
+
+<!-- ────────────────────────────────────────────────────────────────────── -->
+## ⚙️ My Skills / Cyber Arsenal
+
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kali/kali-original.svg" alt="Kali Linux" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40" height=“40”/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="40" height="40"/>
+  <!-- add more: networking, docker, metasploit, etc -->
+</p>
+
+**Core Areas:**
+
+- 🛡️ Penetration Testing & Vulnerability Assessments  
+- 🎯 CTFs / Challenge-Solving / Exploit Development  
+- 🔍 Bug Bounty Hunting & Security Research  
+- 🔧 Bash / Python Scripting & Automation  
+- 📁 Code Audits, Threat Modeling, Secure Configurations  
+
+<!-- ────────────────────────────────────────────────────────────────────── -->
+## 💻 What I’m Working On / Interested In
+
+- Preparing advanced exploit-dev and reverse engineering labs  
+- Writing and contributing to open-source security tools  
+- Collaborating on bug-bounty audits & secure-by-design hardening projects  
+- Participating in global CTF competitions and sharing knowledge  
+- Documenting findings, write-ups, and security lessons learned  
+
+<!-- ────────────────────────────────────────────────────────────────────── -->
+## 🔗 Connect / Follow / Explore More
+
+<p align="center">
   <a href="https://github.com/H4-K" target="_blank">
     <img height="40" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="GitHub"/>
   </a>
-  <!-- Add other links if you have them, e.g. LinkedIn, Twitter, blog... -->
+  <a href="https://h4-k.github.io/Portfolio/" target="_blank">
+    <img height="40" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/google-chrome.svg" alt="Portfolio"/>
+  </a>
+  <!-- Add more links if you have them (Twitter, LinkedIn, etc.) -->
 </p>
 
 <!-- ────────────────────────────────────────────────────────────────────── -->
-## 📈 GitHub Stats & Activity
+## 📊 GitHub Stats & Dev Activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=H4-K&show_icons=true&theme=radical" alt="H4-K's GitHub stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=H4-K&layout=compact&theme=radical" alt="H4-K's top languages"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=H4-K&show_icons=true&theme=dark&hide_border=true" alt="H4-K’s GitHub Stats"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=H4-K&layout=compact&theme=dark&hide_border=true" alt="Top Languages"/>
 </p>
 
 <!-- ────────────────────────────────────────────────────────────────────── -->
-## 🧰 Projects & Portfolio  
+## 🧪 Projects & Portfolio
 
-👉 Don’t forget to check my live portfolio website as well: [h4-k.github.io/Portfolio/](https://h4-k.github.io/Portfolio/)  
+> Check out my live portfolio — tools, write-ups, labs, and more:  
+[🔗 https://h4-k.github.io/Portfolio/](https://h4-k.github.io/Portfolio/)
+
+Also check pinned repos on my GitHub for latest work, proof-of-concepts, tools, and challenges I solved.
 
 <!-- ────────────────────────────────────────────────────────────────────── -->
-## ⚡ Fun / Extras  
+## ⚡ Life of a Hacker — Fun & Extras  
 
-- 🔒 Security is not just a job — it’s a mindset.  
-- 🧑‍💻 I believe in writing clean, transparent, and well-documented code.  
-- 🌍 Based in Marrakesh, open to global remote collaborations.  
+- 💡 Security isn’t just a job — it’s a mindset.  
+- 🤖 I automate everything I can; manual is so passé.  
+- 🌍 Based in Marrakesh, always open to remote collabs.  
+- ☕ Coffee, code, break systems, fix systems — repeat.  
 
 ---
 
 _Last updated: `YYYY-MM-DD`_
+
