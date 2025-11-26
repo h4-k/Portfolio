@@ -5,7 +5,7 @@
 <!-- ────────────────────────────────────────────────────────────────────── -->
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?text=H4K%20//%20Cyber-Security%20Agent👨‍💻&animation=fadeIn&type=waving&color=gradient&height=140"/>
+  <img src="https://capsule-render.vercel.app/api?text=H4K%20//%20Cyber+Sec%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB&animation=fadeIn&type=waving&color=gradient&height=140%22/%3E"
 </p>
 
 <!-- Optional: Add your own banner image. If you host a banner in your repo, use raw URL like:
