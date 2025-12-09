@@ -1,0 +1,9 @@
+{
+	"title": "test",
+	"description": "test",
+	"category": "blaying",
+	"technologies": ["Burp", "Node", "Python"],
+	"repo": "https://github.com/your-username/webvuln-atlas",
+	"demo": "#"
+}
+

@@ -1,0 +1,13 @@
+{
+    "title": "Boot2Root CTF Machine",
+    "description": "Boot2Root machine involving web app exploitation (SQLi, JWT), and privilege escalation via DNS poisoning and cron jobs.",
+    "category": "red",
+    "technologies": [
+        "SQL Injection",
+        "JWT",
+        "Privilege Escalation",
+        "DNS Poisoning"
+    ],
+    "repo": "https://tryhackme.com/jr/tr1x",
+    "demo": "#"
+}

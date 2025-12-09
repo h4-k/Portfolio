@@ -1,0 +1,9 @@
+{
+	"title": "PhantomPhish",
+	"description": "Advanced phishing simulation kit with realistic lure templates, delivery tooling, and engagement analytics.",
+	"category": "red",
+	"technologies": ["Python", "Bash", "SMTP"],
+	"repo": "https://github.com/your-username/phantomphish",
+	"demo": "#"
+}
+

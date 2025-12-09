@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Projects — H4K</title>
+	<meta name="description" content="All projects by H4K aka agent401">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="icon" href="assets/favicon.svg">
+</head>
+<body>
+	<canvas id="matrix"></canvas>
+
+	<header class="nav">
+		<div class="brand">
+			<span class="brand-badge"></span>
+			<span class="brand-text glitch" data-glitch="H4K">H4K</span>
+		</div>
+		<nav>
+			<a href="index.html#hero">Home</a>
+			<a href="index.html#about">About</a>
+			<a href="index.html#certificates">Certificates</a>
+			<a href="projects.html">Projects</a>
+			<a href="index.html#contact">Contact</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="section projects">
+			<div class="terminal-window">
+				<div class="terminal-header">
+					<span class="dot red"></span>
+					<span class="dot yellow"></span>
+					<span class="dot green"></span>
+					<div class="terminal-title">/home/h4k/projects/ (all)</div>
+				</div>
+				<div class="terminal-body">
+					<h2>All Projects</h2>
+					<div class="filters">
+						<button class="chip active" data-filter="all">All</button>
+						<button class="chip" data-filter="red">Red Team</button>
+						<button class="chip" data-filter="blue">Blue Team</button>
+						<button class="chip" data-filter="research">Research</button>
+					</div>
+					<div class="card-grid" id="projects-grid" data-mode="all">
+						<div class="loading-line">
+							<span class="loader"></span>
+							<span>Indexing repositories...</span>
+						</div>
+					</div>
+					<script id="projects-fallback" type="application/json">
+						[
+							{
+								"title": "Shadowwalk",
+								"description": "Adversary emulation toolkit with OPSEC-friendly payload stagers, modular C2, and live operator console.",
+								"category": "red",
+								"technologies": ["Python", "Bash", "Metasploit"],
+								"repo": "https://github.com/your-username/shadowwalk",
+								"demo": "#"
+							},
+							{
+								"title": "SentinelTrace",
+								"description": "Network anomaly detector performing PCAP feature extraction, behavioral baselining, and realtime alerting.",
+								"category": "blue",
+								"technologies": ["Python", "Wireshark", "Zeek"],
+								"repo": "https://github.com/your-username/sentineltrace",
+								"demo": "#"
+							},
+							{
+								"title": "WebVuln Atlas",
+								"description": "Curated exploit lab of modern web vulns paired with write-ups, PoCs, and mitigation strategies.",
+								"category": "research",
+								"technologies": ["Burp", "Node", "Python"],
+								"repo": "https://github.com/your-username/webvuln-atlas",
+								"demo": "#"
+							},
+							{
+								"title": "PhantomPhish",
+								"description": "Advanced phishing simulation kit with realistic lure templates, delivery tooling, and engagement analytics.",
+								"category": "red",
+								"technologies": ["Python", "Bash", "SMTP"],
+								"repo": "https://github.com/your-username/phantomphish",
+								"demo": "#"
+							}
+						]
+					</script>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="terminal-window">
+			<div class="terminal-header">
+				<span class="dot red"></span>
+				<span class="dot yellow"></span>
+				<span class="dot green"></span>
+				<div class="terminal-title">/var/log/status.log</div>
+			</div>
+			<div class="terminal-body foot">
+				<span>© <span id="year"></span> H4K aka agent401</span>
+				<span class="uptime"><span class="led"></span> STATUS: ONLINE</span>
+			</div>
+		</div>
+	</footer>
+
+	<script src="scripts/main.js"></script>
+</body>
+</html>
+
+

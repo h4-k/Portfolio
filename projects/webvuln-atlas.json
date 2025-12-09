@@ -1,0 +1,9 @@
+{
+	"title": "WebVuln Atlas",
+	"description": "Curated exploit lab of modern web vulns paired with write-ups, PoCs, and mitigation strategies.",
+	"category": "research",
+	"technologies": ["Burp", "Node", "Python"],
+	"repo": "https://github.com/your-username/webvuln-atlas",
+	"demo": "#"
+}
+

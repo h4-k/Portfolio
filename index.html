@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>H4K aka agent401 — Hacker Portfolio</title>
+	<meta name="description" content="H4K aka agent401 — Security Researcher | Ethical Hacker">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="icon" href="assets/favicon.svg">
+</head>
+<body class="gated">
+	<!-- Matrix Background -->
+	<canvas id="matrix"></canvas>
+
+	<!-- Access Gate -->
+	<div id="access-gate" class="gate">
+		<div class="gate-window">
+			<div class="terminal-header">
+				<span class="dot red"></span>
+				<span class="dot yellow"></span>
+				<span class="dot green"></span>
+				<div class="terminal-title">/opt/init/access.sh</div>
+			</div>
+			<div class="gate-body">
+				<h1 data-glitch="ACCESS PROTOCOL" class="glitch">ACCESS PROTOCOL</h1>
+				<p class="gate-hint">Decode this Base64 string to infiltrate:</p>
+				<pre class="gate-code">bXI3YmEgYmlpaWs=</pre>
+				<form id="gate-form" class="gate-form">
+					<label for="gate-input">input &gt;</label>
+					<input id="gate-input" autocomplete="off" spellcheck="false" placeholder="...">
+					<button type="submit" class="btn glow small">Authenticate</button>
+				</form>
+				<p class="gate-status" id="gate-status">Awaiting clearance...</p>
+				<small class="gate-tip">hint: welcome agents, decode &amp; enter in lower-case.</small>
+			</div>
+		</div>
+	</div>
+
+	<!-- Top Nav -->
+	<header class="nav">
+		<div class="brand">
+			<span class="brand-badge"></span>
+			<span class="brand-text glitch" data-glitch="H4K">H4K</span>
+		</div>
+		<nav>
+			<a href="#hero">Home</a>
+			<a href="#about">About</a>
+			<a href="#certificates">Certificates</a>
+			<a href="projects.html">Projects</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<main>
+		<!-- HERO -->
+		<section id="hero" class="section hero">
+			<div class="terminal-window">
+				<div class="terminal-header">
+					<span class="dot red"></span>
+					<span class="dot yellow"></span>
+					<span class="dot green"></span>
+					<div class="terminal-title">/home/h4k/intro.sh</div>
+				</div>
+				<div class="terminal-body">
+					<h1 class="typewriter" aria-label="H4K aka agent401">
+						<span id="typewriter-text" data-strings='["H4K", "agent401", "Access Granted"]'></span>
+						<span class="caret">█</span>
+					</h1>
+					<p class="tagline">Security Researcher | Web Application Security Specialist</p>
+					<div class="cta">
+						<a href="#projects" class="btn glow">View Projects</a>
+						<a href="#contact" class="btn outline">Contact</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 3D Hex Grid Accent -->
+			<div class="hex-scape" aria-hidden="true">
+				<div class="hex h1"></div>
+				<div class="hex h2"></div>
+				<div class="hex h3"></div>
+			</div>
+		</section>
+
+		<!-- ABOUT -->
+		<section id="about" class="section about">
+			<div class="terminal-window">
+				<div class="terminal-header">
+					<span class="dot red"></span>
+					<span class="dot yellow"></span>
+					<span class="dot green"></span>
+					<div class="terminal-title">/home/h4k/about.txt</div>
+				</div>
+				<div class="terminal-body grid-2">
+					<div>
+						<h2>About</h2>
+						<p>
+							I am <strong>H4K</strong> aka <strong>agent401</strong>, a security researcher focused on adversary emulation,
+							red/blue collaboration, and hardening modern infrastructures. I specialize in web application security,
+							precision penetration testing, and resilient network defense with a pragmatic, evidence-driven approach.
+						</p>
+						<ul class="badges">
+							<li class="badge online"><span class="pulse"></span> Available for collabs</li>
+							<li class="badge cyan">OSINT</li>
+							<li class="badge green">CTF</li>
+							<li class="badge blue">IR</li>
+						</ul>
+					</div>
+					<div>
+						<h3>Skills Matrix</h3>
+						<div class="skill">
+							<label>Web App Security</label>
+							<div class="bar"><span style="width:95%"></span></div>
+						</div>
+						<div class="skill">
+							<label>Penetration Testing</label>
+							<div class="bar"><span style="width:90%"></span></div>
+						</div>
+						<div class="skill">
+							<label>Network Security</label>
+							<div class="bar"><span style="width:86%"></span></div>
+						</div>
+						<div class="skill">
+							<label>Digital Forensics</label>
+							<div class="bar"><span style="width:75%"></span></div>
+						</div>
+						<div class="skill">
+							<label>Malware Analysis</label>
+							<div class="bar"><span style="width:70%"></span></div>
+						</div>
+						<div class="tooling">
+							<span>Python</span><span>Bash</span><span>Metasploit</span><span>Wireshark</span><span>Burp</span><span>nmap</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- CERTIFICATES -->
+		<section id="certificates" class="section certificates">
+			<div class="terminal-window">
+				<div class="terminal-header">
+					<span class="dot red"></span>
+					<span class="dot yellow"></span>
+					<span class="dot green"></span>
+					<div class="terminal-title">/home/h4k/certificates/</div>
+				</div>
+				<div class="terminal-body">
+					<h2>Certificates</h2>
+					<div class="cert-grid">
+						<article class="card tilt">
+							<div class="card-head">
+								<span class="cat cyan">Certificate</span>
+								<h3>Introduction to Cybersecurity</h3>
+							</div>
+							<p>Completed the Introduction to Cybersecurity course.</p>
+							<div class="cert-img-container">
+								<img src="assets/certificates/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity Certificate" class="cert-img">
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- PROJECTS -->
+		<section id="projects" class="section projects">
+			<div class="terminal-window">
+				<div class="terminal-header">
+					<span class="dot red"></span>
+					<span class="dot yellow"></span>
+					<span class="dot green"></span>
+					<div class="terminal-title">/home/h4k/projects/</div>
+				</div>
+				<div class="terminal-body">
+					<h2>Projects</h2>
+
+					<div class="filters">
+						<button class="chip active" data-filter="all">All</button>
+						<button class="chip" data-filter="red">Red Team</button>
+						<button class="chip" data-filter="blue">Blue Team</button>
+						<button class="chip" data-filter="research">Research</button>
+					</div>
+
+					<div class="card-grid" id="projects-grid" data-mode="latest">
+						<div class="loading-line">
+							<span class="loader"></span>
+							<span>Initializing repositories...</span>
+						</div>
+					</div>
+					<div class="cta" style="margin-top:10px">
+						<a class="btn outline" href="projects.html">View all projects</a>
+					</div>
+					<script id="projects-fallback" type="application/json">
+						[
+							{
+								"title": "Shadowwalk",
+								"description": "Adversary emulation toolkit with OPSEC-friendly payload stagers, modular C2, and live operator console.",
+								"category": "red",
+								"technologies": ["Python", "Bash", "Metasploit"],
+								"repo": "https://github.com/your-username/shadowwalk",
+								"demo": "#"
+							},
+							{
+								"title": "SentinelTrace",
+								"description": "Network anomaly detector performing PCAP feature extraction, behavioral baselining, and realtime alerting.",
+								"category": "blue",
+								"technologies": ["Python", "Wireshark", "Zeek"],
+								"repo": "https://github.com/your-username/sentineltrace",
+								"demo": "#"
+							},
+							{
+								"title": "WebVuln Atlas",
+								"description": "Curated exploit lab of modern web vulns paired with write-ups, PoCs, and mitigation strategies.",
+								"category": "research",
+								"technologies": ["Burp", "Node", "Python"],
+								"repo": "https://github.com/your-username/webvuln-atlas",
+								"demo": "#"
+							},
+							{
+								"title": "PhantomPhish",
+								"description": "Advanced phishing simulation kit with realistic lure templates, delivery tooling, and engagement analytics.",
+								"category": "red",
+								"technologies": ["Python", "Bash", "SMTP"],
+								"repo": "https://github.com/your-username/phantomphish",
+								"demo": "#"
+							}
+						]
+					</script>
+				</div>
+			</div>
+		</section>
+
+		<!-- CONTACT -->
+		<section id="contact" class="section contact">
+			<div class="terminal-window">
+				<div class="terminal-header">
+					<span class="dot red"></span>
+					<span class="dot yellow"></span>
+					<span class="dot green"></span>
+					<div class="terminal-title">/home/h4k/contact.gpg</div>
+				</div>
+				<div class="terminal-body grid-2">
+					<div>
+						<h2>Contact</h2>
+						<form id="contact-form">
+							<div class="field">
+								<label for="name">Name</label>
+								<input type="text" id="name" name="name" required>
+							</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea id="message" name="message" rows="5" required></textarea>
+							</div>
+							<div class="actions">
+								<button type="submit" class="btn glow">Send</button>
+								<span class="status" id="form-status" aria-live="polite">idle</span>
+							</div>
+						</form>
+						<p class="form-note">No backend on GitHub Pages. This opens your email client via mailto: link.</p>
+						<div class="socials">
+							<a class="icon-link" href="https://github.com/your-username" target="_blank" rel="noopener" aria-label="GitHub">
+								<img src="assets/github.svg" alt="GitHub">
+							</a>
+							<a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+								<img src="assets/linkedin.svg" alt="LinkedIn">
+							</a>
+							<a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="Twitter/X">
+								<img src="assets/twitter.svg" alt="Twitter/X">
+							</a>
+							<a class="icon-link secret" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener" aria-label="???">
+								<span>?</span>
+							</a>
+						</div>
+					</div>
+					<div class="cipher-block">
+						<h3>Latest Transmission</h3>
+						<p class="cipher-text">Encrypted asset delivered. Verify integrity &amp; deploy countermeasures.</p>
+						<div class="cipher-status">
+							<span class="led"></span> channel secure
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="terminal-window">
+			<div class="terminal-header">
+				<span class="dot red"></span>
+				<span class="dot yellow"></span>
+				<span class="dot green"></span>
+				<div class="terminal-title">/var/log/status.log</div>
+			</div>
+			<div class="terminal-body foot">
+				<span>© <span id="year"></span> H4K aka agent401</span>
+				<span class="uptime"><span class="led"></span> STATUS: ONLINE</span>
+			</div>
+		</div>
+	</footer>
+
+	<script src="scripts/main.js"></script>
+</body>
+</html>
+
+
+

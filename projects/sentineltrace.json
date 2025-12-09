@@ -1,0 +1,9 @@
+{
+	"title": "SentinelTrace",
+	"description": "Network anomaly detector performing PCAP feature extraction, behavioral baselining, and realtime alerting.",
+	"category": "blue",
+	"technologies": ["Python", "Wireshark", "Zeek"],
+	"repo": "https://github.com/your-username/sentineltrace",
+	"demo": "#"
+}
+

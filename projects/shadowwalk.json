@@ -1,0 +1,9 @@
+{
+	"title": "Shadowwalk",
+	"description": "Adversary emulation toolkit with OPSEC-friendly payload stagers, modular C2, and live operator console.",
+	"category": "red",
+	"technologies": ["Python", "Bash", "Metasploit"],
+	"repo": "https://github.com/your-username/shadowwalk",
+	"demo": "#"
+}
+

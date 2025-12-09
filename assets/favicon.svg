@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect width="128" height="128" rx="24" fill="#031512"/><g filter="url(#a)"><path d="M26 93 53 64 26 35h17l27 29-27 29H26Zm58 0H67l13-16-21-13 9-10 35 23-19 16Z" fill="#00ff9c"/></g><defs><filter id="a" x="16" y="25" width="96" height="78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur stdDeviation="2"/><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/><feBlend in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/><feGaussianBlur stdDeviation="3" result="effect2_foregroundBlur"/></filter></defs></svg>
+
+

