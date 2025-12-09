@@ -135,7 +135,8 @@ export const CertificationSection: React.FC = () => {
                         <motion.div
                             key={cert.id}
                             whileHover={{ scale: 1.02 }}
-                            className="group relative p-6 bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-xl overflow-hidden"
+                            className="group relative p-6 bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-xl overflow-hidden cursor-pointer"
+                            onClick={() => cert.link && window.open(cert.link, '_blank')}
                         >
                             {/* Holographic Border Effect */}
                             <div className="absolute inset-0 border border-primary/0 group-hover:border-primary/50 transition-colors rounded-xl duration-500" />
