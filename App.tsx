@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Sidebar';
 import Home from './components/Home';
@@ -35,7 +35,6 @@ function AppContent() {
     articles: [],
   });
 
-  const [loading, setLoading] = useState(true);
 
   // Initialize Matrix Rain
   useEffect(() => {
@@ -51,8 +50,8 @@ function AppContent() {
       try {
         const data = await loadAllContent();
         setContent(data);
-      } finally {
-        setLoading(false);
+      } catch (error) {
+        console.error("Failed to load content", error);
       }
     };
 

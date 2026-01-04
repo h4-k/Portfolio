@@ -58,7 +58,7 @@ export interface Article {
   id: string;
   title: string;
   summary: string;
-  content: string; // Markdown supported
+  content?: string; // Markdown supported
   date: string;
   readTime: string;
   tags: string[];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { BookOpen, ArrowUpRight, Clock, Hash } from 'lucide-react';
+import { BookOpen, Clock, Hash } from 'lucide-react';
 import type { Article } from '../types';
 
 interface BlogProps {
@@ -22,12 +22,12 @@ const Blog: React.FC<BlogProps> = ({ articles }) => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {articles.map((article, index) => (
+                    {articles.map((article) => (
                         <motion.article
                             key={article.id}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: 0.1 }}
                             className="group flex flex-col h-full bg-zinc-900/30 border border-white/5 hover:border-primary/50 rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,220,130,0.1)] hover:-translate-y-1"
                         >
                             <Link to={`/articles/id/${article.id}`} className="flex flex-col h-full p-6">

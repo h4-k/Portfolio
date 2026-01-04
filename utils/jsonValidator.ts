@@ -1,4 +1,5 @@
-import type { Project, Experience, Education, Certification, Article } from '../types';
+// No type imports needed for the validator logic using 'any'
+
 
 interface ValidationResult {
     isValid: boolean;

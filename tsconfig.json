@@ -24,8 +24,19 @@
   },
   "include": [
     "src",
-    "**/*.ts",
-    "**/*.tsx"
+    "components",
+    "utils",
+    "services",
+    "App.tsx",
+    "index.tsx",
+    "types.ts",
+    "constants.ts",
+    "vite-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "vite.config.ts"
   ],
   "references": [
     {

@@ -18,12 +18,12 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience
                 </div>
 
                 <div className="relative border-l border-zinc-800 ml-4 md:ml-12 space-y-12">
-                    {experiences.map((job, index) => (
+                    {experiences.map((job) => (
                         <motion.div
                             key={job.id}
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: 0.1 }}
                             className="relative pl-8 md:pl-12"
                         >
                             <Link to={`/experience/id/${job.id}`} className="block">
@@ -77,12 +77,12 @@ export const EducationSection: React.FC<EducationSectionProps> = ({ education })
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {education.map((edu, index) => (
+                    {education.map((edu) => (
                         <motion.div
                             key={edu.id}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: 0.1 }}
                         >
                             <Link to={`/education/id/${edu.id}`} className="block h-full">
                                 <div className="p-6 border border-zinc-800 bg-zinc-900/20 rounded-2xl hover:bg-zinc-900/40 transition-colors h-full">
@@ -125,7 +125,7 @@ export const CertificationSection: React.FC<CertificationSectionProps> = ({ cert
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {certifications.map((cert, index) => (
+                    {certifications.map((cert) => (
                         <motion.div
                             key={cert.id}
                             whileHover={{ scale: 1.02 }}
