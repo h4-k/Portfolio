@@ -17,7 +17,10 @@ const loadJsonFromDirectory = async <T>(
 
     for (const file of files) {
         try {
-            const response = await fetch(`data/${directory}/${file}.json`);
+            const baseUrl = import.meta.env.BASE_URL;
+            // Ensure no double slashes
+            const path = `${baseUrl}data/${directory}/${file}.json`.replace(/\/+/g, '/');
+            const response = await fetch(path);
             if (!response.ok) continue;
 
             const data = await response.json();
