@@ -1,0 +1,12 @@
+{
+    "id": "e1",
+    "role": "Senior Security Engineer",
+    "company": "Cyberdyne Systems",
+    "period": "2022 - Present",
+    "description": "Lead architect for autonomous defense grids. Patched critical kernel vulnerabilities preventing global outages.",
+    "tech": [
+        "C++",
+        "Kubernetes",
+        "eBPF"
+    ]
+}

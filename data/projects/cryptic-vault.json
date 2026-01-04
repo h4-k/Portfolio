@@ -1,0 +1,11 @@
+{
+    "id": "cryptic-vault",
+    "title": "Cryptic Vault",
+    "description": "Quantum-resistant file encryption system for ultra-sensitive data storage. Features multi-sig authentication and biometric locking.",
+    "techStack": [
+        "Assembly",
+        "C",
+        "OpenSSL"
+    ],
+    "securityLevel": "DECLASSIFIED"
+}

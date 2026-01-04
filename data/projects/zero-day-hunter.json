@@ -1,0 +1,11 @@
+{
+    "id": "zero-day-hunter",
+    "title": "Zero-Day Hunter",
+    "description": "Automated vulnerability scanner designed to detect unidentified exploits in legacy architecture. Deployed on 50+ enterprise nodes for real-time threat analysis.",
+    "techStack": [
+        "Python",
+        "Rust",
+        "Kali Linux"
+    ],
+    "securityLevel": "TOP SECRET"
+}

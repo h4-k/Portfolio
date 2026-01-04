@@ -1,0 +1,13 @@
+{
+    "id": "a2",
+    "title": "The Future of Quantum Decryption",
+    "summary": "Analyzing the impact of Shor's algorithm on RSA-2048 and post-quantum cryptographic standards.",
+    "date": "Sep 05, 2023",
+    "readTime": "12 min read",
+    "tags": [
+        "Cryptography",
+        "Quantum",
+        "Math"
+    ],
+    "link": "#"
+}
