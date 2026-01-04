@@ -8,5 +8,11 @@
         "C++",
         "Kubernetes",
         "eBPF"
+    ],
+    "location": "San Francisco, CA",
+    "details": [
+        "Architected a zero-trust network infrastructure for autonomous defense systems.",
+        "Implemented real-time threat detection using eBPF and machine learning models.",
+        "Collaborated with hardware teams to secure low-level firmware communications."
     ]
 }

@@ -53,7 +53,7 @@ export const loadEducation = async (): Promise<Education[]> => {
 };
 
 export const loadCertifications = async (): Promise<Certification[]> => {
-    const files = ['oscp', 'cissp', 'ceh'];
+    const files = ['oscp', 'cissp', 'ceh', 'i2cs', 'nexhunt', 'cyber-basics'];
     return loadJsonFromDirectory<Certification>('certificates', files, validateCertification);
 };
 

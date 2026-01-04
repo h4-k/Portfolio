@@ -5,6 +5,9 @@ export interface Project {
   techStack: string[];
   securityLevel: 'DECLASSIFIED' | 'RESTRICTED' | 'TOP SECRET';
   link?: string;
+  fullDescription?: string;
+  writeup?: string;
+  images?: string[];
 }
 
 export interface Skill {
@@ -27,6 +30,8 @@ export interface Experience {
   period: string;
   description: string;
   tech: string[];
+  details?: string[];
+  location?: string;
 }
 
 export interface Education {
@@ -35,6 +40,7 @@ export interface Education {
   school: string;
   year: string;
   honors?: string;
+  description?: string;
 }
 
 export interface Certification {
@@ -43,12 +49,16 @@ export interface Certification {
   issuer: string;
   date: string;
   badgeUrl?: string;
+  description?: string;
+  verificationLink?: string;
+  fileUrl?: string;
 }
 
 export interface Article {
   id: string;
   title: string;
   summary: string;
+  content: string; // Markdown supported
   date: string;
   readTime: string;
   tags: string[];

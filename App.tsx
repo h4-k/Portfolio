@@ -1,18 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Sidebar';
-import { Hero, AboutSection } from './components/EmailDetail';
-import ProjectsTerminal from './components/EmailList';
-import SkillsTerminal from './components/StatsModal';
-import { ExperienceSection, EducationSection, CertificationSection } from './components/Timeline';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
+import Home from './components/Home';
+import DetailView from './components/DetailView';
 import { initMatrixRain } from './services/matrix';
 import { loadAllContent } from './utils/contentLoader';
 import type { Project, Experience, Education, Certification, Article } from './types';
 
-function App() {
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+function AppContent() {
   const [activeSection, setActiveSection] = useState('home');
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const location = useLocation();
 
   const [content, setContent] = useState<{
     projects: Project[];
@@ -52,15 +59,16 @@ function App() {
     fetchContent();
   }, []);
 
-  // Scroll spy effect
+  // Scroll spy effect (only on home page)
   useEffect(() => {
+    if (location.pathname !== '/') return;
+
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'certifications', 'articles', 'contact'];
       for (const id of sections) {
         const element = document.getElementById(id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Adjust detection zone for smoother pill movement
           if (rect.top <= 300 && rect.bottom >= 300) {
             setActiveSection(id);
           }
@@ -69,18 +77,21 @@ function App() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
+
+  const isDetailPage = location.pathname.includes('/id/');
 
   return (
     <div className="min-h-screen bg-background text-zinc-300 font-sans selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+      <ScrollToTop />
 
-      {/* Background Layer 1: Matrix Rain (Enhanced Visibility) */}
+      {/* Background Layer 1: Matrix Rain */}
       <canvas
         ref={canvasRef}
         className="fixed top-0 left-0 w-full h-full z-0 opacity-30 pointer-events-none mix-blend-screen"
       />
 
-      {/* Background Layer 2: CRT Scanline Texture Overlay */}
+      {/* Background Layer 2: CRT Scanline */}
       <div
         className="fixed inset-0 pointer-events-none z-[60] opacity-20"
         style={{
@@ -95,26 +106,22 @@ function App() {
       {/* Background Layer 3: Soft Vignette */}
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.8)_90%)] pointer-events-none z-0" />
 
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      {/* Navbar only shows if not in a deep detail state OR we adjust its logic */}
+      {!isDetailPage && <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />}
 
-      <main className="relative z-10 flex flex-col gap-0">
-        <Hero />
-        <AboutSection />
-        <SkillsTerminal />
-        <ProjectsTerminal projects={content.projects} />
-        <ExperienceSection experiences={content.experience} />
-        <EducationSection education={content.education} />
-        <CertificationSection certifications={content.certifications} />
-        <Blog articles={content.articles} />
-        <Contact />
-
-        <footer id="logs" className="py-12 border-t border-white/5 bg-black/60 text-center text-zinc-500 backdrop-blur-sm relative z-20">
-          <p className="font-mono text-xs tracking-widest">
-            DESIGNED & DEVELOPED BY H4K // {new Date().getFullYear()}
-          </p>
-        </footer>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home content={content} />} />
+        <Route path="/:section/id/:id" element={<DetailView content={content} />} />
+      </Routes>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

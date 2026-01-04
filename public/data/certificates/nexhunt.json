@@ -1,0 +1,9 @@
+{
+    "id": "nexhunt-ctf",
+    "name": "NexHUNT CTF Scholar",
+    "issuer": "NexHUNT Security",
+    "date": "2024-11-20",
+    "description": "Recognition for outstanding performance in the NexHUNT Capture The Flag competition. Demonstrated proficiency in web exploitation, binary analysis, and cryptography.",
+    "fileUrl": "assets/certificates/NexHUNT_CTF_h4k.pdf",
+    "writeup": "# NexHUNT CTF 2024 Writeup\n\n## Overview\nA 48-hour intense competition focused on real-world vulnerability scenarios.\n\n## Challenges Solved\n1. **SQL Injection**: Bypassed a custom WAF to extract user credentials.\n2. **Buffer Overflow**: Exploited a legacy binary to gain remote shell access.\n3. **Steganography**: Recovered hidden data from compromised JPG files."
+}
