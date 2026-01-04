@@ -1,0 +1,12 @@
+{
+    "id": "e3",
+    "role": "Security Analyst",
+    "company": "NetCorp Defense",
+    "period": "2018 - 2020",
+    "description": "Monitored SIEM logs and conducted forensic analysis on intrusion attempts.",
+    "tech": [
+        "Splunk",
+        "Wireshark",
+        "Snort"
+    ]
+}

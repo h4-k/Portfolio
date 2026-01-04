@@ -1,0 +1,13 @@
+{
+    "id": "a1",
+    "title": "Bypassing ASLR in Modern Kernels",
+    "summary": "A deep dive into heap spraying techniques to circumvent address space layout randomization in Linux 5.x.",
+    "date": "Oct 12, 2023",
+    "readTime": "8 min read",
+    "tags": [
+        "Exploit Dev",
+        "Kernel",
+        "Linux"
+    ],
+    "link": "#"
+}

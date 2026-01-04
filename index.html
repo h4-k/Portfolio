@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self' https://aistudiocdn.com; script-src 'self' 'unsafe-inline' https://aistudiocdn.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';">
+    <title>H4K // PORTFOLIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              background: '#050505', 
+              surface: '#0a0a0a',    
+              primary: '#00dc82',    // Vivid Cyber Green
+              secondary: '#00ff9d',  // Neon Green
+              accent: '#10b981',     // Emerald
+            },
+            animation: {
+              'spin-slow': 'spin 10s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            },
+            backgroundImage: {
+              'cyber-grid': "url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h40v40H0z\" fill=\"none\"/%3E%3Cpath d=\"M0 40h40M40 0v40\" stroke=\"%2300dc82\" stroke-opacity=\"0.1\" stroke-width=\"1\"/%3E%3C/svg%3E')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #e4e4e7;
+        overflow-x: hidden;
+      }
+      
+      /* Subtle Noise Texture */
+      .noise-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Modern Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #18181b;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00dc82;
+      }
+
+      /* 3D Scene Utilities */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      
+      /* Neon Text Glow */
+      .text-glow {
+        text-shadow: 0 0 10px rgba(0, 220, 130, 0.5), 0 0 20px rgba(0, 220, 130, 0.3);
+      }
+
+      /* Glitch Effect */
+      .glitch-wrapper {
+         position: relative;
+      }
+      .glitch-wrapper::before,
+      .glitch-wrapper::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .glitch-wrapper::before {
+        left: 2px;
+        text-shadow: -1px 0 #00dc82;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+      }
+      .glitch-wrapper::after {
+        left: -2px;
+        text-shadow: -1px 0 #ff00c1;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim2 5s infinite linear alternate-reverse;
+      }
+
+      @keyframes glitch-anim {
+        0% { clip: rect(31px, 9999px, 94px, 0); }
+        4.16% { clip: rect(91px, 9999px, 43px, 0); }
+        8.33% { clip: rect(6px, 9999px, 86px, 0); }
+        12.5% { clip: rect(28px, 9999px, 99px, 0); }
+        16.66% { clip: rect(64px, 9999px, 35px, 0); }
+        20.83% { clip: rect(38px, 9999px, 55px, 0); }
+        25% { clip: rect(98px, 9999px, 73px, 0); }
+        100% { clip: rect(81px, 9999px, 30px, 0); }
+      }
+      @keyframes glitch-anim2 {
+        0% { clip: rect(67px, 9999px, 94px, 0); }
+        4.16% { clip: rect(10px, 9999px, 3px, 0); }
+        8.33% { clip: rect(46px, 9999px, 90px, 0); }
+        12.5% { clip: rect(2px, 9999px, 14px, 0); }
+        16.66% { clip: rect(39px, 9999px, 86px, 0); }
+        20.83% { clip: rect(48px, 9999px, 7px, 0); }
+        25% { clip: rect(93px, 9999px, 5px, 0); }
+        100% { clip: rect(41px, 9999px, 99px, 0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="noise-bg"></div>
+    
+    <!-- SVG Filter for organic glitching/distortion -->
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="fractal" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" />
+        <feDisplacementMap in="SourceGraphic" scale="10" />
+      </filter>
+    </svg>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

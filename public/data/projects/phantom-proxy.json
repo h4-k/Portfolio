@@ -1,0 +1,11 @@
+{
+    "id": "phantom-proxy",
+    "title": "Phantom Proxy",
+    "description": "Decentralized VPN solution utilizing blockchain for immutable routing tables. Ensures total anonymity and zero-log policy enforcement.",
+    "techStack": [
+        "Solidity",
+        "Node.js",
+        "Web3.js"
+    ],
+    "securityLevel": "DECLASSIFIED"
+}

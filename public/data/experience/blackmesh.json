@@ -1,0 +1,12 @@
+{
+    "id": "e2",
+    "role": "Red Team Operator",
+    "company": "BlackMesh Ops",
+    "period": "2020 - 2022",
+    "description": "Executed advanced persistent threat simulations for Fortune 500 clients. 100% success rate in breaching air-gapped systems.",
+    "tech": [
+        "Cobalt Strike",
+        "Python",
+        "Bash"
+    ]
+}

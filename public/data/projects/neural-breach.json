@@ -1,0 +1,11 @@
+{
+    "id": "neural-breach",
+    "title": "Neural Breach",
+    "description": "AI-driven penetration testing tool that simulates human-like attack vectors using LSTM networks to predict firewall weaknesses.",
+    "techStack": [
+        "TensorFlow",
+        "PyTorch",
+        "C++"
+    ],
+    "securityLevel": "RESTRICTED"
+}
