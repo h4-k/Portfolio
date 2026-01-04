@@ -9,5 +9,6 @@
         "Kernel",
         "Linux"
     ],
-    "link": "#"
+    "link": "#",
+    "content": "# Bypassing ASLR in Modern Kernels\n\n## Introduction\nAddress Space Layout Randomization (ASLR) is a security technique used to prevent exploitation of memory corruption vulnerabilities...\n\n### The Technique\nBy leveraging heap spraying and partial overwrites, we can reliably predict memory addresses even with randomization active.\n\n```c\n// Potential leak primitive\nvoid leak_address() {\n    // ...\n}\n```\n\n### Conclusion\nWhile ASLR remains a strong defense, it is not invincible when combined with other primitives."
 }

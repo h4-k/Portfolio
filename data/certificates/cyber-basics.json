@@ -1,0 +1,8 @@
+{
+    "id": "cyber-basics",
+    "name": "Cybersecurity Essentials",
+    "issuer": "Security Hub",
+    "date": "2024-05-15",
+    "description": "Comprehensive course covering network security, cryptography, and risk management.",
+    "badgeUrl": "assets/certificates/introduction-to-cybersecurity.png"
+}
