@@ -17,7 +17,7 @@ const loadJsonFromDirectory = async <T>(
 
     for (const file of files) {
         try {
-            const response = await fetch(`/data/${directory}/${file}.json`);
+            const response = await fetch(`data/${directory}/${file}.json`);
             if (!response.ok) continue;
 
             const data = await response.json();
