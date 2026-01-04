@@ -8,6 +8,6 @@
         "Kali Linux"
     ],
     "securityLevel": "TOP SECRET",
-    "fullDescription": "Zero-Day Hunter is an advanced AI-driven scanner that identifies novel vulnerabilities by analyzing execution patterns and memory leaks in real-time.",
-    "writeup": "# How Zero-Day Hunter Works\n\n## The Engine\nBuilt on a custom Rust core, the engine performs static and dynamic analysis to identify potential overflow conditions before they are triggered.\n\n### Metrics\n- **Detection Rate**: 98%\n- **Latency**: < 50ms\n- **Support**: x86, ARM64"
+    "fullDescription": "Zero-Day Hunter is an advanced **AI-driven scanner** that identifies novel vulnerabilities by analyzing execution patterns and memory leaks in real-time. It specialized in **zero-day detection** across distributed enterprise environments.",
+    "writeup": "# How Zero-Day Hunter Works\n\n## The Core Engine\nBuilt on a custom **Rust** core, the engine performs static and dynamic analysis to identify potential overflow conditions before they are triggered. \n\n### Key Features\n*   **Automated Scanning**: Continuous monitoring of 50+ enterprise nodes.\n*   **Real-time Analysis**: Detects unidentified exploits in legacy architecture.\n\n### Technical Metrics\n- **Detection Rate**: `98%` success in controlled labs.\n- **Latency**: `< 50ms` processing overhead per packet.\n- **Support**: Multi-architecture compatibility (x86, ARM64)."
 }

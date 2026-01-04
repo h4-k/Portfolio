@@ -41,7 +41,7 @@ const loadJsonFromDirectory = async <T>(
 };
 
 export const loadProjects = async (): Promise<Project[]> => {
-    const files = ['zero-day-hunter', 'phantom-proxy', 'neural-breach', 'cryptic-vault'];
+    const files = ['zero-day-hunter', 'phantom-proxy', 'neural-breach', 'cryptic-vault', 'ctf-ghost-in-the-shell'];
     return loadJsonFromDirectory<Project>('projects', files, validateProject);
 };
 

