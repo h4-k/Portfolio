@@ -90,14 +90,3 @@ status: Always learning, always probing — never idle.
 Also check pinned repos on my GitHub for latest work — tools, proof-of-concepts, challenge write-ups, labs.
 
 ---
-
-## ⚡ Life of a Hacker — Fun & Extras
-
-- 💡 Security isn’t just a job — it’s a mindset.  
-- 🤖 I automate everything I can; manual is so passé.  
-- 🌍 Based in Marrakesh, always open to remote collabs.  
-- ☕ Coffee, code, break systems, fix systems — repeat.  
-
----
-
-_Last updated: `YYYY-MM-DD`_
